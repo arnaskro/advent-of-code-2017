@@ -4,9 +4,9 @@ const part1 = (input) => {
 
   while (index < input.length) {
     steps++;
-    value = input[index]
-    input[index] += 1
-    index += value
+    value = input[index];
+    input[index] += 1;
+    index += value;
   }
 
   return steps;
