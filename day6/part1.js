@@ -45,4 +45,4 @@ const part1 = (input) => {
 };
 
 
-console.log("Part 1 answer:", part1(parseData()));
+console.log("Part 1 answer:", part1(parseData())); // 12841
