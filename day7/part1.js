@@ -9,8 +9,8 @@ const parseData = () =>
     (line.match(/([a-z]+) (\(\d+\))(?: (-> ([a-z, ]+)))?/))
   );
 
-// iqdna (212) -> gmhwcj, vllsfc, ebptuar, lmcqa
 
+// 1st approach
 const createTree = (input) => {
   let tree = {};
   
@@ -35,7 +35,7 @@ const findRoot = (tree) => {
   return root;
 }
 
-const part1 = (input) => {
+const part1older = (input) => {
   let tree = createTree(input);
   let root = findRoot(tree);
 
@@ -43,4 +43,16 @@ const part1 = (input) => {
 };
 
 
-console.log("Part 1 answer:", part1(parseData()));
+// 2nd approach
+const part1 = (input) => {
+  let root, parent = input[0];
+
+  do {
+    root = parent;
+    parent = input.filter(z => z.children.indexOf(root.name) != -1)[0]
+  } while(parent !== undefined)
+
+  return root.name;
+}
+
+console.log("Part 1 answer:", part1(parseData())); // ahnofa
