@@ -18,4 +18,4 @@ const part1 = (data) => {
   return score;
 }
 
-console.log(part1(data)); 
+console.log(part1(data)); // 16827
